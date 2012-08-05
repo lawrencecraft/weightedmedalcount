@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  bronze_weight: 1
+  silver_weight: 1
+  gold_weight: 1
+
+two:
+  name: MyString
+  description: MyText
+  bronze_weight: 1
+  silver_weight: 1
+  gold_weight: 1

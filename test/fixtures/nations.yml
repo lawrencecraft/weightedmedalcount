@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ioc_code: MyString
+  name: MyString
+  bronze: 1
+  gold: 1
+  silver: 1
+
+two:
+  ioc_code: MyString
+  name: MyString
+  bronze: 1
+  gold: 1
+  silver: 1
