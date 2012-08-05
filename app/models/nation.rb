@@ -32,4 +32,13 @@ class Nation < ActiveRecord::Base
     end
     nation
   end
+
+  def apply_weight(weight)
+    logger.debug "Weighing: #{weight.inspect}"
+    (bronze * weight.bronze_weight) + (silver * weight.silver_weight) + (gold * weight.gold_weight)
+  end
+
+  def self.get_all_ordered_by_gold
+      Nation.order("gold DESC")
+  end
 end

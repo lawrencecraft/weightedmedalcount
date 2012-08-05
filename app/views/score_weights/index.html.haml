@@ -1,0 +1,29 @@
+- model_class = ScoreWeight
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:bronze_weight)
+      %th= model_class.human_attribute_name(:silver_weight)
+      %th= model_class.human_attribute_name(:gold_weight)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @score_weights.each do |score_weight|
+      %tr
+        %td= link_to score_weight.id, score_weight_path(score_weight)
+        %td= score_weight.name
+        %td= score_weight.description
+        %td= score_weight.bronze_weight
+        %td= score_weight.silver_weight
+        %td= score_weight.gold_weight
+        %td=l score_weight.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_score_weight_path(score_weight), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), score_weight_path(score_weight), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_score_weight_path, :class => 'btn btn-primary'

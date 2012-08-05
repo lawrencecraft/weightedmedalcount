@@ -1,0 +1,29 @@
+- model_class = ScoreWeight
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @score_weight.name
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @score_weight.description
+%p
+  %strong= model_class.human_attribute_name(:bronze_weight) + ':'
+  %br
+  = @score_weight.bronze_weight
+%p
+  %strong= model_class.human_attribute_name(:silver_weight) + ':'
+  %br
+  = @score_weight.silver_weight
+%p
+  %strong= model_class.human_attribute_name(:gold_weight) + ':'
+  %br
+  = @score_weight.gold_weight
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), score_weights_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_score_weight_path(@score_weight), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), score_weight_path(@score_weight), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

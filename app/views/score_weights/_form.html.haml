@@ -1,0 +1,24 @@
+= form_for @score_weight, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'text_field'
+  .control-group
+    = f.label :description, :class => 'control-label'
+    .controls
+      = f.text_area :description, :class => 'text_area'
+  .control-group
+    = f.label :bronze_weight, :class => 'control-label'
+    .controls
+      = f.number_field :bronze_weight, :class => 'number_field'
+  .control-group
+    = f.label :silver_weight, :class => 'control-label'
+    .controls
+      = f.number_field :silver_weight, :class => 'number_field'
+  .control-group
+    = f.label :gold_weight, :class => 'control-label'
+    .controls
+      = f.number_field :gold_weight, :class => 'number_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), score_weights_path, :class => 'btn'

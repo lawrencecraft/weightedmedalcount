@@ -9,6 +9,8 @@
       %th= model_class.human_attribute_name(:gold)
       %th= model_class.human_attribute_name(:silver)
       %th= model_class.human_attribute_name(:bronze)
+      - @scoring.each do |score|
+        %th= score.name
   %tbody
     - @nations.each do |nation|
       %tr
@@ -19,4 +21,5 @@
         %td= nation.gold
         %td= nation.silver
         %td= nation.bronze
-
+        - @scoring.each do |score|
+          %td= nation.apply_weight score

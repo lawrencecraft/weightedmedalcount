@@ -1,6 +1,7 @@
 Weightedmedalcount::Application.routes.draw do
-  resources :nations
+  resources :score_weights
 
+  root :to => "nations#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
