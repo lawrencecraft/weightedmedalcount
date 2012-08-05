@@ -1,20 +1,22 @@
 - model_class = Nation
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize
+  %h1=t '.title', :default => "Weighted Medal Counts"
 %table.table.table-striped
   %thead
     %tr
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:ioc_code)
-      %th= model_class.human_attribute_name(:bronze)
-      %th= model_class.human_attribute_name(:silver)
       %th= model_class.human_attribute_name(:gold)
+      %th= model_class.human_attribute_name(:silver)
+      %th= model_class.human_attribute_name(:bronze)
   %tbody
     - @nations.each do |nation|
       %tr
-        %td= nation.name
+        %td
+          =image_tag "nations/#{nation.ioc_code}.png"
+          = nation.name
         %td= nation.ioc_code
-        %td= nation.bronze
         %td= nation.gold
         %td= nation.silver
-        %td=l nation.created_at
+        %td= nation.bronze
+
