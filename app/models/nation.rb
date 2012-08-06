@@ -39,6 +39,6 @@ class Nation < ActiveRecord::Base
   end
 
   def self.get_all_ordered_by_gold
-      Nation.order("gold,silver,bronze DESC")
+      Nation.order("gold DESC,silver DESC,bronze DESC")
   end
 end
