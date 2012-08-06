@@ -1,7 +1,7 @@
 - model_class = Nation
 .page-header
   %h1=t '.title', :default => "Weighted Medal Counts"
-%table.table.table-striped
+%table#medals.table.table-striped.tablesorter
   %thead
     %tr
       %th= model_class.human_attribute_name(:name)
