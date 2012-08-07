@@ -15,8 +15,8 @@
     - @nations.each do |nation|
       %tr
         %td
-          =image_tag "nations/#{nation.ioc_code}.png"
-          = nation.name
+          =image_tag "nations/#{nation.ioc_code}.png" rescue nil
+          =nation.name
         %td= nation.ioc_code
         %td= nation.gold
         %td= nation.silver
