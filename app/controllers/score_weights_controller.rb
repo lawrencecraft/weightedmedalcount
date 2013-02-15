@@ -1,5 +1,5 @@
 class ScoreWeightsController < ApplicationController
-  http_basic_authenticate_with :name => "biglarry", :password => "ilovelaura"
+  http_basic_authenticate_with :name => "test", :password => "test"
 
   # GET /score_weights
   # GET /score_weights.json
